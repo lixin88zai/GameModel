@@ -18,8 +18,6 @@
 //                    struct类型定义                 //
 //                                                  //
 //--------------------------------------------------//
-
-
 //玩家信息结构体
 typedef struct UserInfo
 {
@@ -54,19 +52,19 @@ typedef struct UserInfo
 
 
 //游戏中玩家信息结构体
-typedef struct GameUserInfo : UserInfo
+typedef struct PlayerInfo : UserInfo
 {
     int                 nRealSeat;          //玩家服务器端座位
     int                 nClientSeat;        //玩家客户端为左
-    GameUserInfo()
+    PlayerInfo()
     {
         nRealSeat = -1;
         nClientSeat = -1;
     }
-}KKGAMEUSERINFGO, *LPKKGAMEUSERINFGO;
+}KKPLAYERINFGO, *LPKKPLAYERINFGO;
 
 //玩家牌数据
-typedef struct GameCardData
+typedef struct PlayerCardsData
 {
     unsigned long long nUserId;
     int             nCardId;                    //玩家摸牌id
@@ -75,7 +73,17 @@ typedef struct GameCardData
     vector<int>     oGangCardVec;               //玩家杠牌队列
     vector<vector<int>> oChiCardVec;            //玩家吃牌队列
     vector<int>     oOutCardVec;                //玩家打牌队列
-}KKGAMECARDDATA, *LPKKGAMECARDDATA;
+    PlayerCardsData()
+    {
+        nUserId = 0;
+        nCardId = -1;
+        oHandsCardVec = {};
+        oPengCardVec = {};
+        oGangCardVec = {};
+        oChiCardVec = {};
+        oOutCardVec = {};
+    }
+}KKPLAYERCARDSDATA, *LPKKPLAYERCARDSDATA;
 
 //--------------------------------------------------//
 //                                                  //

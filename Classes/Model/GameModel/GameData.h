@@ -19,18 +19,23 @@ public:
     GameData();
     ~GameData();
     virtual bool init();
-    virtual void reset();                                       //退出游戏重置游戏数据
-    virtual void continueReset();                               //继续游戏重置游戏数据
-//玩家信息数据相关  begin
+    virtual void reset();               //退出游戏重置游戏数据
+    virtual void continueReset();       //继续游戏重置游戏数据
+//-------------------------玩家信息数据相关  begin----------------------------//
 public:
-    void addUserInfo(KKGAMEUSERINFGO oUserInfo);                //添加一个玩家信息
-    void leaveUserInfo(unsigned long long userId);              //删除一个玩家信息
+    void addPlayerInfo(KKPLAYERINFGO oUserInfo);            //添加一个玩家信息
+    void leavePlayerInfo(unsigned long long playerId);      //删除一个玩家信息
 protected:
-    vector<KKGAMEUSERINFGO>        m_pUserInfoVec;              //玩家信息vec
-//玩家数信息据相关  end
-
-//玩家牌相关 begin
-public:
+    vector<KKPLAYERINFGO>        m_pUserInfoVec;            //玩家信息vec
+//-------------------------玩家信息数据相关  end------------------------------//
     
-//玩家牌相关 end
+//-------------------------玩家牌相关 begin----------------------------------//
+public:
+    void setPlayerHandCards(unsigned long long playerId, vector<int> handsCards);               //设置玩家手牌
+    void setPlayerCardsData(KKPLAYERCARDSDATA cardsData);                                       //设置玩家牌数据
+    void getPlayerCardsData(unsigned long long playerId, KKPLAYERCARDSDATA& cardsData);         //通过id获取玩家牌数据
+    const KKPLAYERCARDSDATA getPlayerCardsData(unsigned long long playerId);                    //获取玩家牌数据
+protected:
+    vector<KKPLAYERCARDSDATA>          m_pPlayersCardsVec;                                      //玩家牌信息
+//-------------------------玩家牌相关 end-----------------------------------//
 };
