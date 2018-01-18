@@ -1,0 +1,63 @@
+// song_ning       2016/05/27
+
+// 切换账户时使用
+message AccountInfo
+{
+    required string account_name            = 1;  // 用户名
+    required string account_password        = 2;  // 用户密码
+    required string nick_name               = 3;  // 玩家昵称
+    required uint32 face_id                 = 4;  // faceId
+    required uint64 user_id                 = 5;  // 多乐号
+    required uint32 vip_type                = 6;  // 会员类型
+    required uint32 vip_level               = 7;  // 会员等级
+    required uint32 vip_year_status         = 8;  // 年会员状态
+    required uint32 head_frame_type         = 9;  // 头像边框信息
+}
+
+message AccountVector
+{
+    repeated AccountInfo account_vector     = 1;  // 账户信息
+}
+
+// 单机每轮数据
+message OfflineRound
+{
+    required int32 win  = 1;    // 赢
+    required int32 lose = 2;    // 输
+}
+
+// 单机光
+message OfflineFail
+{
+    required int32 fail_less_count = 1; // 小光
+    required int32 fail_more_count = 2; // 小光
+}
+
+// 单机数据
+message OfflineData
+{
+    required int32 face_team_a  = 1; // A组级牌
+    required int32 face_team_b  = 2; // B组级牌
+    required int32 banker_last  = 3; // 上轮庄家
+    required int32 banker_curr  = 4; // 本轮庄家
+}
+
+// 开宝箱单个数据
+message ChestItemInfo
+{
+    required string name					= 1;  // 名称
+    required uint32 id						= 2;  // ID
+    required uint32 num						= 3;  // 数量
+}
+
+// 宝箱配置
+message ChestConfig
+{
+    repeated ChestItemInfo chest_vector		= 1;  // 宝箱配置列表
+}
+
+// 对应用户ID的用户信息
+message ToIdUserInfo
+{
+    required int32 user_login_day        = 1;  // 用户登录的时间
+}

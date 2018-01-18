@@ -1,0 +1,53 @@
+<skeleton name="feiwen_xia" frameRate="30" version="2.2">
+  <armatures>
+    <armature name="feiwen_xia">
+      <b name="aixin" x="0.35" y="0" kX="0" kY="0" cX="0.68" cY="0.68" pX="0" pY="0" z="0">
+        <d name="yuanjian-aixin" pX="126" pY="116"/>
+      </b>
+      <b name="feiwen_wenyin" x="-3.65" y="-2" kX="15" kY="15" cX="3.34" cY="3.34" pX="0" pY="0" z="0">
+        <d name="yuanjian-feiwen_chunyin" pX="65" pY="45"/>
+      </b>
+      <b name="feiwen_wenyin1" x="-3.65" y="-2" kX="15" kY="15" cX="1.74" cY="1.74" pX="0" pY="0" z="2">
+        <d name="yuanjian-feiwen_chunyin" pX="65" pY="45"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="feiwen_xia">
+      <mov name="1" dr="80" to="6" drTW="80" lp="0" twE="NaN">
+        <b name="aixin" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="0.35" y="0" cocos2d_x="0.35" cocos2d_y="0" kX="0" kY="0" cX="0.68" cY="0.68" pX="0" pY="0" z="0" dI="0" twE="0" dr="23"/>
+          <f x="0.35" y="0" cocos2d_x="0.35" cocos2d_y="0" kX="0" kY="0" cX="1.86" cY="1.86" pX="0" pY="0" z="0" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="10" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="48" dI="-1"/>
+        </b>
+        <b name="feiwen_wenyin" sc="1" dl="0">
+          <f x="-3.65" y="-2" cocos2d_x="-3.65" cocos2d_y="-2" kX="15" kY="15" cX="3.34" cY="3.34" pX="0" pY="0" z="0" dI="0" twE="0" dr="8">
+            <colorTransform a="0" r="0" g="0" b="0" aM="39" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="-3.65" y="-2" cocos2d_x="-3.65" cocos2d_y="-2" kX="15" kY="15" cX="1.74" cY="1.74" pX="0" pY="0" z="0" dI="0" dr="62"/>
+          <f x="-3.65" y="-2" cocos2d_x="-3.65" cocos2d_y="-2" kX="15" kY="15" cX="1.74" cY="1.74" pX="0" pY="0" z="0" dI="0" twE="0" dr="9"/>
+          <f x="-3.65" y="-2" cocos2d_x="-3.65" cocos2d_y="-2" kX="15" kY="15" cX="1.74" cY="1.74" pX="0" pY="0" z="0" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="5" rM="100" gM="100" bM="100"/>
+          </f>
+        </b>
+        <b name="feiwen_wenyin1" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="-3.65" y="-2" cocos2d_x="-3.65" cocos2d_y="-2" kX="15" kY="15" cX="1.74" cY="1.74" pX="0" pY="0" z="2" dI="0" twE="0" dr="16">
+            <colorTransform a="0" r="0" g="0" b="0" aM="49" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="-3.65" y="-2" cocos2d_x="-3.65" cocos2d_y="-2" kX="15" kY="15" cX="2.81" cY="2.81" pX="0" pY="0" z="2" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="10" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="55" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="feiwen_xia" width="512" height="256">
+    <SubTexture name="yuanjian-feiwen_chunyin" width="130" height="90" cocos2d_pX="65" cocos2d_pY="45" x="254" y="0"/>
+    <SubTexture name="yuanjian-aixin" width="252" height="232" cocos2d_pX="126" cocos2d_pY="116" x="0" y="0"/>
+  </TextureAtlas>
+</skeleton>

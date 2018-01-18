@@ -1,0 +1,124 @@
+<skeleton name="rengzhuantou_xia" frameRate="30" version="2.2">
+  <armatures>
+    <armature name="rengzhuantou_xia">
+      <b name="zhuantou_yin" x="8.85" y="4.95" kX="22.49" kY="22.46" cX="0.98" cY="0.98" pX="0" pY="0" z="0">
+        <d name="yuanjian-zhuantou_liehen" pX="39.5" pY="63"/>
+      </b>
+      <b name="bixue" x="7.2" y="10.05" kX="0" kY="0" cX="1" cY="1" pX="0" pY="-9.5" z="1">
+        <d name="yuanjian-bixue" pX="4.5" pY="9.5"/>
+      </b>
+      <b name="lieheng" x="-8.6" y="3.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="yuanjian-lieheng" pX="136" pY="116"/>
+      </b>
+      <b name="yanwu_1" x="3.45" y="-1.25" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="yuanjian-yanwu_1" pX="88" pY="95.5"/>
+      </b>
+      <b name="yanwu_4" x="-0.75" y="-2.4" kX="15" kY="15" cX="0.85" cY="0.85" pX="0" pY="0" z="3">
+        <d name="yuanjian-yanwu_4" pX="88" pY="95.5"/>
+      </b>
+      <b name="yanwu_2" x="-1.9" y="5.9" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="yuanjian-yanwu_2" pX="88" pY="95.5"/>
+      </b>
+      <b name="yanwu_3" x="0.5" y="5.5" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2">
+        <d name="yuanjian-yanwu_3" pX="88" pY="95.5"/>
+      </b>
+      <b name="zhuantou_2" x="10.05" y="-0.35" kX="22.47" kY="22.47" cX="0.91" cY="0.91" pX="0" pY="0" z="0">
+        <d name="yuanjian-zhuantou" pX="39.5" pY="63"/>
+      </b>
+      <b name="suizhuan2" x="46.75" y="-37.1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3">
+        <d name="yuanjian-suizhuan2" pX="46" pY="44"/>
+      </b>
+      <b name="suizhuan1" x="3.55" y="18.8" kX="-45" kY="-45" cX="1" cY="1" pX="0" pY="0" z="4">
+        <d name="yuanjian-suizhuan1" pX="46" pY="44"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="rengzhuantou_xia">
+      <mov name="1" dr="100" to="6" drTW="100" lp="0" twE="NaN">
+        <b name="zhuantou_yin" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="8.85" y="4.95" cocos2d_x="8.85" cocos2d_y="4.95" kX="22.49" kY="22.46" cX="0.98" cY="0.98" pX="0" pY="0" z="0" dI="0" dr="91"/>
+          <f x="8.85" y="4.95" cocos2d_x="8.85" cocos2d_y="4.95" kX="22.49" kY="22.46" cX="0.98" cY="0.98" pX="0" pY="0" z="0" dI="0" dr="1"/>
+        </b>
+        <b name="bixue" sc="1" dl="0">
+          <f dr="38" dI="-1"/>
+          <f x="7.2" y="10.05" cocos2d_x="7.2" cocos2d_y="19.55" kX="0" kY="0" cX="1" cY="1" pX="0" pY="-9.5" z="1" dI="0" twE="0" dr="24"/>
+          <f x="7.2" y="10.05" cocos2d_x="7.2" cocos2d_y="33.75" kX="0" kY="0" cX="1" cY="2.49" pX="0" pY="-9.5" z="1" dI="0" dr="37"/>
+          <f x="7.2" y="10.05" cocos2d_x="7.2" cocos2d_y="33.75" kX="0" kY="0" cX="1" cY="2.49" pX="0" pY="-9.5" z="1" dI="0" dr="1"/>
+        </b>
+        <b name="lieheng" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="-8.6" y="3.3" cocos2d_x="-8.6" cocos2d_y="3.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="91"/>
+          <f x="-8.6" y="3.3" cocos2d_x="-8.6" cocos2d_y="3.3" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+        </b>
+        <b name="yanwu_1" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="3.45" y="-1.25" cocos2d_x="3.45" cocos2d_y="-1.25" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="4"/>
+          <f x="3.45" y="-1.25" cocos2d_x="3.45" cocos2d_y="-1.25" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f dr="87" dI="-1"/>
+        </b>
+        <b name="yanwu_4" sc="1" dl="0">
+          <f dr="8" dI="-1"/>
+          <f x="-0.75" y="-2.4" cocos2d_x="-0.75" cocos2d_y="-2.4" kX="15" kY="15" cX="0.85" cY="0.85" pX="0" pY="0" z="3" dI="0" twE="0" dr="4"/>
+          <f x="-0.75" y="-2.4" cocos2d_x="-0.75" cocos2d_y="-2.4" kX="15" kY="15" cX="0.99" cY="0.99" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f dr="87" dI="-1"/>
+        </b>
+        <b name="yanwu_2" sc="1" dl="0">
+          <f dr="13" dI="-1"/>
+          <f x="-1.9" y="5.9" cocos2d_x="-1.9" cocos2d_y="5.9" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="4"/>
+          <f x="-1.9" y="5.9" cocos2d_x="-1.9" cocos2d_y="5.9" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1"/>
+          <f dr="82" dI="-1"/>
+        </b>
+        <b name="yanwu_3" sc="1" dl="0">
+          <f dr="18" dI="-1"/>
+          <f x="0.5" y="5.5" cocos2d_x="0.5" cocos2d_y="5.5" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="5"/>
+          <f x="0.5" y="5.5" cocos2d_x="0.5" cocos2d_y="5.5" kX="15" kY="15" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="19" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="76" dI="-1"/>
+        </b>
+        <b name="zhuantou_2" sc="1" dl="0">
+          <f x="10.05" y="-0.35" cocos2d_x="10.05" cocos2d_y="-0.35" kX="22.47" kY="22.47" cX="0.91" cY="0.91" pX="0" pY="0" z="0" dI="0" twE="0" dr="5"/>
+          <f x="10.05" y="-0.35" cocos2d_x="10.05" cocos2d_y="-0.35" kX="22.47" kY="22.47" cX="2.22" cY="2.22" pX="0" pY="0" z="0" dI="0" twE="0" dr="3">
+            <colorTransform a="0" r="0" g="0" b="0" aM="36" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="10.05" y="-0.35" cocos2d_x="10.05" cocos2d_y="-0.35" kX="22.47" kY="22.47" cX="0.97" cY="0.97" pX="0" pY="0" z="4" dI="0" twE="0" dr="3"/>
+          <f x="10.05" y="-0.35" cocos2d_x="10.05" cocos2d_y="-0.35" kX="22.47" kY="22.47" cX="1.06" cY="1.06" pX="0" pY="0" z="3" dI="0" twE="0" dr="3"/>
+          <f x="10.05" y="-0.35" cocos2d_x="10.05" cocos2d_y="-0.35" kX="22.47" kY="22.47" cX="0.97" cY="0.97" pX="0" pY="0" z="3" dI="0" dr="1"/>
+          <f dr="85" dI="-1"/>
+        </b>
+        <b name="suizhuan2" sc="1" dl="0">
+          <f dr="15" dI="-1"/>
+          <f x="46.75" y="-37.1" cocos2d_x="46.75" cocos2d_y="-37.1" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="6"/>
+          <f x="73.95" y="-17.9" cocos2d_x="73.95" cocos2d_y="-17.9" kX="45" kY="45" cX="1" cY="1" pX="0" pY="0" z="2" dI="0" twE="0" dr="5"/>
+          <f x="94.75" y="4.5" cocos2d_x="94.75" cocos2d_y="4.5" kX="60" kY="60" cX="0.64" cY="0.83" pX="0" pY="0" z="2" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="37" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="73" dI="-1"/>
+        </b>
+        <b name="suizhuan1" sc="1" dl="0">
+          <f dr="15" dI="-1"/>
+          <f x="3.55" y="18.8" cocos2d_x="3.55" cocos2d_y="18.8" kX="-45" kY="-45" cX="1" cY="1" pX="0" pY="0" z="4" dI="0" twE="0" dr="6"/>
+          <f x="-17.25" y="38" cocos2d_x="-17.25" cocos2d_y="38" kX="-75" kY="-75" cX="1" cY="1" pX="0" pY="0" z="3" dI="0" twE="0" dr="5"/>
+          <f x="-39.65" y="58.8" cocos2d_x="-39.65" cocos2d_y="58.8" kX="-105" kY="-105" cX="0.55" cY="0.77" pX="0" pY="0" z="3" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="37" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="73" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="rengzhuantou_xia" width="512" height="1024">
+    <SubTexture name="yuanjian-suizhuan1" width="92" height="88" cocos2d_pX="46" cocos2d_pY="44" x="0" y="427"/>
+    <SubTexture name="yuanjian-suizhuan2" width="92" height="88" cocos2d_pX="46" cocos2d_pY="44" x="94" y="490"/>
+    <SubTexture name="yuanjian-zhuantou" width="79" height="126" cocos2d_pX="39.5" cocos2d_pY="63" x="178" y="234"/>
+    <SubTexture name="yuanjian-yanwu_3" width="176" height="191" cocos2d_pX="88" cocos2d_pY="95.5" x="259" y="386"/>
+    <SubTexture name="yuanjian-yanwu_2" width="176" height="191" cocos2d_pX="88" cocos2d_pY="95.5" x="0" y="234"/>
+    <SubTexture name="yuanjian-yanwu_4" width="176" height="191" cocos2d_pX="88" cocos2d_pY="95.5" x="274" y="0"/>
+    <SubTexture name="yuanjian-yanwu_1" width="176" height="191" cocos2d_pX="88" cocos2d_pY="95.5" x="274" y="193"/>
+    <SubTexture name="yuanjian-lieheng" width="272" height="232" cocos2d_pX="136" cocos2d_pY="116" x="0" y="0"/>
+    <SubTexture name="yuanjian-bixue" width="9" height="19" cocos2d_pX="4.5" cocos2d_pY="9.5" x="452" y="0"/>
+    <SubTexture name="yuanjian-zhuantou_liehen" width="79" height="126" cocos2d_pX="39.5" cocos2d_pY="63" x="178" y="362"/>
+  </TextureAtlas>
+</skeleton>

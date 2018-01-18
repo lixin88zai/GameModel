@@ -1,0 +1,76 @@
+<skeleton name="knife" frameRate="30" version="2.2">
+  <armatures>
+    <armature name="knife">
+      <b name="2" x="0" y="53.5" kX="0" kY="0" cX="0.3" cY="0.3" pX="0" pY="45" z="0">
+        <d name="K3" pX="24.65" pY="43.7"/>
+      </b>
+      <b name="1" x="11.35" y="-26.55" kX="45" kY="45" cX="0.4" cY="0.4" pX="0" pY="0" z="1">
+        <d name="K10" isArmature="1"/>
+      </b>
+      <b name="3" x="0.25" y="1.4" kX="0" kY="0" cX="1" cY="1" pX="92.1" pY="89.6" z="0">
+        <d name="K4" pX="-0.05" pY="0.7"/>
+      </b>
+      <b name="5" x="-48.75" y="16" kX="62.25" kY="62.25" cX="1" cY="1" pX="0.2" pY="43" z="0">
+        <d name="K1" pX="24.65" pY="22.7"/>
+      </b>
+    </armature>
+    <armature name="K10"/>
+  </armatures>
+  <animations>
+    <animation name="K10">
+      <mov name="unnamed" dr="7" to="6" drTW="7" lp="0" twE="NaN"/>
+    </animation>
+    <animation name="knife">
+      <mov name="knife1" dr="10" to="6" drTW="10" lp="1" twE="NaN">
+        <b name="2" sc="1" dl="0">
+          <f x="0" y="53.5" cocos2d_x="0" cocos2d_y="40" kX="0" kY="0" cX="0.3" cY="0.3" pX="0" pY="45" z="0" dI="0" twE="0" dr="3"/>
+          <f x="0.25" y="43" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0.25" pY="43" z="0" dI="0" twE="0" dr="2"/>
+          <f x="0.25" y="43" cocos2d_x="0" cocos2d_y="-2.15" kX="0" kY="0" cX="1.05" cY="1.05" pX="0.25" pY="43" z="0" dI="0" twE="0" dr="2"/>
+          <f x="0.25" y="43" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0.25" pY="43" z="0" dI="0" dr="2"/>
+          <f x="0.25" y="43" cocos2d_x="0" cocos2d_y="0" kX="0" kY="0" cX="1" cY="1" pX="0.25" pY="43" z="0" dI="0" dr="1"/>
+        </b>
+        <b name="1" sc="1" dl="0">
+          <f dr="3" dI="-1"/>
+          <f x="11.35" y="-26.55" cocos2d_x="11.35" cocos2d_y="-26.55" kX="45" kY="45" cX="0.4" cY="0.4" pX="0" pY="0" z="1" dI="0" twE="0" dr="3">
+            <colorTransform a="0" r="0" g="0" b="0" aM="0" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="11.35" y="-26.55" cocos2d_x="11.35" cocos2d_y="-26.55" kX="45" kY="45" cX="0.4" cY="0.4" pX="0" pY="0" z="1" dI="0" twE="0" dr="3"/>
+          <f x="11.35" y="-26.55" cocos2d_x="11.35" cocos2d_y="-26.55" kX="45" kY="45" cX="0.4" cY="0.4" pX="0" pY="0" z="1" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="0" rM="100" gM="100" bM="100"/>
+          </f>
+        </b>
+        <f st="0" dr="9"/>
+        <f st="9" dr="1"/>
+      </mov>
+      <mov name="knife2" dr="10" to="6" drTW="10" lp="1" twE="NaN">
+        <b name="3" sc="1" dl="0">
+          <f x="0.25" y="1.4" cocos2d_x="-91.85" cocos2d_y="-88.2" kX="0" kY="0" cX="1" cY="1" pX="92.1" pY="89.6" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.4" cocos2d_x="-12.5" cocos2d_y="-126.25" kX="40.08" kY="40.08" cX="1" cY="1" pX="92.1" pY="89.6" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.4" cocos2d_x="72.8" cocos2d_y="-104.6" kX="80.18" kY="80.18" cX="1" cY="1" pX="92.2" pY="89.6" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.35" cocos2d_x="123.6" cocos2d_y="-33.8" kX="119.86" kY="119.86" cX="1" cY="1" pX="92" pY="89.65" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.4" cocos2d_x="117.35" cocos2d_y="54" kX="159.98" kY="159.98" cX="1" cY="1" pX="92.1" pY="89.6" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.4" cocos2d_x="56.05" cocos2d_y="117" kX="-159.98" kY="-159.98" cX="1" cY="1" pX="92.05" pY="89.65" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.3" y="1.4" cocos2d_x="-31.6" cocos2d_y="125.7" kX="-119.86" kY="-119.86" cX="1" cY="1" pX="92.05" pY="89.65" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.2" y="1.4" cocos2d_x="-103.7" cocos2d_y="76.8" kX="-80.18" kY="-80.18" cX="1" cY="1" pX="92.05" pY="89.6" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.4" cocos2d_x="-127.7" cocos2d_y="-7.85" kX="-40.08" kY="-40.08" cX="1" cY="1" pX="92.1" pY="89.55" z="0" dI="0" twE="0" dr="1"/>
+          <f x="0.25" y="1.4" cocos2d_x="-91.85" cocos2d_y="-88.2" kX="0" kY="0" cX="1" cY="1" pX="92.1" pY="89.6" z="0" dI="0" dr="1"/>
+        </b>
+        <f st="0" dr="9"/>
+        <f st="9" dr="1"/>
+      </mov>
+      <mov name="knife3" dr="40" to="6" drTW="40" lp="1" twE="NaN">
+        <b name="5" sc="1" dl="0">
+          <f x="-48.75" y="16" cocos2d_x="-10.8" cocos2d_y="-4.2" kX="62.25" kY="62.25" cX="1" cY="1" pX="0.2" pY="43" z="0" dI="0" dr="39"/>
+          <f x="-48.75" y="16" cocos2d_x="-10.8" cocos2d_y="-4.2" kX="62.25" kY="62.25" cX="1" cY="1" pX="0.2" pY="43" z="0" dI="0" dr="1"/>
+        </b>
+        <f st="0" dr="39"/>
+        <f st="39" dr="1"/>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="knife" width="256" height="256">
+    <SubTexture name="K1" width="47" height="67" cocos2d_pX="24.15" cocos2d_pY="22.2" x="188" y="98"/>
+    <SubTexture name="K4" width="186" height="181" cocos2d_pX="-0.05" cocos2d_pY="0.7" x="0" y="0"/>
+    <SubTexture name="K3" width="58" height="96" cocos2d_pX="24.65" cocos2d_pY="43.7" x="188" y="0"/>
+  </TextureAtlas>
+</skeleton>

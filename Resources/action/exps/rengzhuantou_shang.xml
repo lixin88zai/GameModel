@@ -1,0 +1,25 @@
+<skeleton name="rengzhuantou_shang" frameRate="30" version="2.2">
+  <armatures>
+    <armature name="rengzhuantou_shang">
+      <b name="zhuantou" x="1.15" y="0.35" kX="0" kY="0" cX="0.66" cY="0.66" pX="0" pY="0" z="0">
+        <d name="yuanjian-zhuantou" pX="39.5" pY="63"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="rengzhuantou_shang">
+      <mov name="1" dr="12" to="6" drTW="12" lp="0" twE="NaN">
+        <b name="zhuantou" sc="1" dl="0">
+          <f x="1.15" y="0.35" cocos2d_x="1.15" cocos2d_y="0.35" kX="0" kY="0" cX="0.66" cY="0.66" pX="0" pY="0" z="0" dI="0" twE="0" dr="9">
+            <colorTransform a="0" r="0" g="0" b="0" aM="39" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="1.15" y="0.35" cocos2d_x="1.15" cocos2d_y="0.35" kX="0" kY="0" cX="1" cY="1" pX="0" pY="0" z="0" dI="0" twE="0" dr="2"/>
+          <f x="1.15" y="0.35" cocos2d_x="1.15" cocos2d_y="0.35" kX="15" kY="15" cX="0.82" cY="0.82" pX="0" pY="0" z="0" dI="0" dr="1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="rengzhuantou_shang" width="128" height="128">
+    <SubTexture name="yuanjian-zhuantou" width="79" height="126" cocos2d_pX="39.5" cocos2d_pY="63" x="0" y="0"/>
+  </TextureAtlas>
+</skeleton>

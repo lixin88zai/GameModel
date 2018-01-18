@@ -1,0 +1,73 @@
+<skeleton name="feiwen_shang" frameRate="30" version="2.2">
+  <armatures>
+    <armature name="feiwen_shang">
+      <b name="feiwen_1" x="-0.75" y="31" kX="0" kY="0" cX="0.71" cY="0.71" pX="0" pY="0" z="0">
+        <d name="yuanjian-feiwen_1" pX="65" pY="45"/>
+      </b>
+      <b name="feiwen_2" x="-0.75" y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0">
+        <d name="yuanjian-feiwen_2" pX="65" pY="45"/>
+      </b>
+      <b name="feiwen_3" x="-0.75" y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0">
+        <d name="yuanjian-feiwen_3" pX="65" pY="45"/>
+      </b>
+      <b name="feiwen_4" x="-0.75" y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="1">
+        <d name="yuanjian-feiwen_3" pX="65" pY="45"/>
+      </b>
+      <b name="dangexin" x="10.35" y="-62.65" kX="30" kY="30" cX="1" cY="1" pX="0" pY="0" z="1">
+        <d name="aixin_dangge" pX="38.5" pY="33.5"/>
+      </b>
+    </armature>
+  </armatures>
+  <animations>
+    <animation name="feiwen_shang">
+      <mov name="1" dr="30" to="6" drTW="30" lp="0" twE="NaN">
+        <b name="feiwen_1" sc="1" dl="0">
+          <f x="-0.75" y="31" cocos2d_x="-0.75" cocos2d_y="31" kX="0" kY="0" cX="0.71" cY="0.71" pX="0" pY="0" z="0" dI="0" twE="0" dr="8">
+            <colorTransform a="0" r="0" g="0" b="0" aM="35" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" dr="2"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" dr="1"/>
+          <f dr="19" dI="-1"/>
+        </b>
+        <b name="feiwen_2" sc="1" dl="0">
+          <f dr="11" dI="-1"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" dr="2"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" dr="1"/>
+          <f dr="16" dI="-1"/>
+        </b>
+        <b name="feiwen_3" sc="1" dl="0">
+          <f dr="14" dI="-1"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" dr="11"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" twE="0" dr="4"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="0" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="24" rM="100" gM="100" bM="100"/>
+          </f>
+        </b>
+        <b name="feiwen_4" sc="1" dl="0">
+          <f dr="15" dI="-1"/>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="1.64" cY="1.64" pX="0" pY="0" z="1" dI="0" twE="0" dr="8">
+            <colorTransform a="0" r="0" g="0" b="0" aM="34" rM="100" gM="100" bM="100"/>
+          </f>
+          <f x="-0.75" y="-45" cocos2d_x="-0.75" cocos2d_y="-45" kX="0" kY="0" cX="3.16" cY="3.16" pX="0" pY="0" z="1" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="15" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="6" dI="-1"/>
+        </b>
+        <b name="dangexin" sc="1" dl="0">
+          <f dr="15" dI="-1"/>
+          <f x="10.35" y="-62.65" cocos2d_x="10.35" cocos2d_y="-62.65" kX="30" kY="30" cX="1" cY="1" pX="0" pY="0" z="1" dI="0" twE="0" dr="10"/>
+          <f x="75.35" y="-93.65" cocos2d_x="75.35" cocos2d_y="-93.65" kX="30" kY="30" cX="1.33" cY="1.33" pX="0" pY="0" z="1" dI="0" dr="1">
+            <colorTransform a="0" r="0" g="0" b="0" aM="24" rM="100" gM="100" bM="100"/>
+          </f>
+          <f dr="4" dI="-1"/>
+        </b>
+      </mov>
+    </animation>
+  </animations>
+  <TextureAtlas name="feiwen_shang" width="256" height="512">
+    <SubTexture name="aixin_dangge" width="77" height="67" cocos2d_pX="38.5" cocos2d_pY="33.5" x="132" y="0"/>
+    <SubTexture name="yuanjian-feiwen_3" width="130" height="90" cocos2d_pX="65" cocos2d_pY="45" x="0" y="184"/>
+    <SubTexture name="yuanjian-feiwen_2" width="130" height="90" cocos2d_pX="65" cocos2d_pY="45" x="0" y="0"/>
+    <SubTexture name="yuanjian-feiwen_1" width="130" height="90" cocos2d_pX="65" cocos2d_pY="45" x="0" y="92"/>
+  </TextureAtlas>
+</skeleton>

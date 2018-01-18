@@ -1,0 +1,306 @@
+//v1.0 yisilong 2014/02/14 创建proto
+// huangyingqi  2014/04/04 添加 NTFMoneyChg。用户金币发生变化
+// yaojia       2014/09/11 够级流程
+// yaojia       2016/10/26 跑得快流程
+
+// 保持连接
+message REQHold {
+}
+
+// 查询用户是否为超时状态
+message ACKIsTimeout {
+required int32 result_id = 1 [default = 0];	//  用户是否为超时状态，0=非超时状态，1超时状态
+}
+
+// 心跳包应答
+message ACKHold {
+optional int32 result_id = 1;   //  心跳包返回结果
+}
+
+// 登录
+message REQUserLogin {
+	required int64 user_id          = 1;    // 用户ID,确定一个用户的唯一值
+	required bytes session_key      = 2;    // session key
+	required int32 client_version   = 3;	// 客户端版本号
+}
+
+// 登录反馈消息
+message ACKUserLogin {
+	required int32 result_id = 1 [default = 0];		// 应答结果（0=成功）
+}
+
+// 系统公告
+message SystemHorn{
+    optional bytes content        = 1;
+}
+
+// 喇叭使用通知
+message NTFUseHorn{
+optional int32 horn_type      = 1 ;      // 喇叭类型
+optional bytes horn_content   = 2 ;      // 喇叭内容,需要根据喇叭类型来解析
+}
+
+// 配桌请求
+message REQMatchTable{
+optional int32  roomid     = 1; //请求进入的房间号
+}
+
+// 配桌响应
+message ACKMatchTable{
+optional int32  code       = 1; //配桌结果
+optional int32  roomid     = 2; //房间号
+optional int32  tableid    = 3; //桌子号
+optional int32  seatid     = 4; //座位号
+}
+
+// 加入私人游戏
+message REQPrivyJoinGame {
+required int64 user_id = 1;			// 用户ID
+required bytes session_key = 2;		// session
+required int32 client_version = 3;	// 客户端版本号
+required int32 table_id = 4;		// table id
+}
+
+// 加入私人游戏应答
+message ACKPrivyJoinGame {
+required int32 result_id = 1 [default = 0];		// 应答结果（0=成功）
+}
+
+// 离开游戏
+message REQLeaveGame {
+}
+
+// 离开游戏应答
+message ACKLeaveGame {
+required int32 result_id = 1 [default = 0];		//应答结果（0=成功）
+}
+
+// 重新加入游戏
+message REQRejoinGame {
+required int64 user_id = 1;			//用户ID,确定一个用户的唯一值
+required bytes session_key = 2;		//session key
+required int32 client_version = 3;	//客户端版本号
+required int32 table_id = 4;		//table id
+required int32 seat_id = 5;         //seat id
+required int32 seq_id = 6;          //包序列号
+}
+
+// 重新加入游戏应答
+message ACKRejoinGame {
+required int32 result_id = 1 [default = 0];		//应答结果（0=成功）
+}
+
+// 私人游戏坐下
+message REQPrivySitDown{
+optional int32 seat_id = 1 ;    // 座位id
+}
+// 私人游戏坐应答
+message ACKPrivySitDown{
+optional int32 result_id = 1 ; // 返回值
+}
+
+// 准备
+message REQReady {
+}
+
+// 准备应答
+message ACKReady {
+required int32 result_id = 1 [default = 0];		//应答结果（0=成功）
+}
+
+// 桌子事件
+message TableEventItem {
+required int32 event_type = 1;			// 类型
+optional int64 user_id = 2;				// 玩家ID
+optional int32 seat_id = 3;				// 座位号
+optional int32 kick_reason = 4;			// 被踢原因
+optional int64 kicked_user_id = 5;		// 被踢者
+optional bytes pb_buffer = 6;			// 每个游戏自定义protobuf, 比如桌子信息tableinfo, 用户的gameinfo, 用户的userinfo
+}
+
+// 桌子信息项
+message TableInfoItem {
+required int64 user_id = 1;			//用户名
+required int32 seat_id = 2;			//座位号
+required int32 identity_type = 3;	//身份
+required int32 state_type = 4;		//状态
+optional int32 state_line = 5;      //在线状态
+}
+
+// 桌子状态信息
+message TableInfo {
+repeated TableInfoItem info_list = 1; //桌子信息项数组
+}
+
+//玩家用户信息
+message UserInfo{
+optional int32 gender = 1 ; //性别
+optional bytes face = 2 ;   //头像
+optional bytes nick = 3 ;   //昵称
+optional bytes loginip = 4; //登录ip
+}
+
+
+// 桌子事件
+message NTFTableEvent {
+repeated TableEventItem event_list = 1; // 事件列表
+}
+
+// 游戏相关数据
+message PlayerGameInfo
+{
+optional int64 user_id              = 1;    // 用户唯一索引值
+optional int32 score                = 2;    // 当前积分
+optional int32 wins                 = 3;    // 赢局
+optional int32 loses                = 4;    // 负局
+}
+
+// 游戏初始化
+message NTFGameInit {
+}
+
+// 发牌
+message NTFDealCards {
+repeated int32 card_id = 1;		// 牌
+optional int64 fst_user = 2;    // 第一个出牌的玩家
+}
+
+// 发牌结束
+message REQDealEnd {
+}
+
+// 轮序令牌
+message NTFToken {
+repeated int64 user_id = 1;			// 轮序令牌玩家ID
+optional int32 token_type = 2;		// 轮序类型
+}
+
+// 请求出牌
+message REQPlayCards {
+repeated int32 card_id = 1;     // 牌
+}
+
+// 通知出牌
+message NTFPlayCards {
+required int64 user_id = 1;     // 出牌玩家id
+repeated int32 card_id = 2;     // 牌ID列表
+}
+
+// 通知过牌
+message NTFPassCards {
+required int64 user_id = 1;     // 过牌玩家ID
+}
+
+// 牌面重置
+message NTFResetCards {
+required int32 code_id = 1;     // 重置原因：空牌、不存在、轮序错误
+repeated int32 card_id = 2;     // 牌
+repeated int32 played_id = 3;   // 出牌内容
+}
+
+// 结算项
+message ResultItem
+{
+required int64 user_id       = 1; //玩家多乐号
+optional int32 result_type   = 2; //结果：输，赢，全关，被关
+repeated int32 card_id       = 3; //剩余的手牌
+optional int32 score         = 4; //得分
+optional int32 totalscore    = 5; //当前总积分
+optional int32 baopei        = 6; //是否包赔(0 不包赔 1 包赔)
+optional int32 lastscore     = 7; //走科的积分变化
+optional int32 bombscore     = 8; //炸弹积分
+}
+
+// 结算
+message NTFResult {
+repeated ResultItem result_list = 1;    // 结算项列
+}
+
+//炸弹结算项
+message BombResultItem {
+optional int64 user_id   = 1;
+optional int32 score_chg = 2;
+}
+
+//炸弹结算
+message NTFBombResult {
+repeated BombResultItem result_list = 1;
+}
+
+//最终结算
+message FinalResultItem {
+optional int64 user_id          = 1;
+optional int32 single_max_score = 2;
+optional int32 bombcnt          = 3;
+optional int32 wins             = 4;
+optional int32 loses            = 5;
+optional int32 totalscore       = 6;
+}
+
+message NTFFinalResult {
+repeated FinalResultItem result_list = 1;
+}
+
+//游戏进度通知
+message NTFGameSchedule{
+optional int32 count_all = 1 ;
+optional int32 count_idx = 2 ; //从 第一局 开始记
+};
+
+// 玩家当轮游戏数据
+message BoardInfoItem
+{
+optional int64 user_id       = 1;    // 玩家ID
+repeated int32 curr_card_id  = 2;    // 当轮出牌: 牌ID
+optional int32 left_card_num = 3;    // 剩余手牌的张数
+}
+
+// 当轮游戏数据
+message NTFBoardInfo
+{
+repeated BoardInfoItem info_item        = 1;    // 所有玩家当轮游戏数据
+optional int32 curr_token_type          = 2;    // 轮序令牌类型
+repeated int64 curr_token_user_id       = 3;    // 轮到的玩家ID
+repeated int32 remain_card_id           = 4;    // 玩家剩余手牌
+optional int64 first_user_id            = 5;    // 第一轮首发牌的玩家
+}
+
+//通知道具信息
+message NTFPropInfo{
+optional int32 propid = 1;
+optional int32 chg    = 2;
+optional int32 left   = 3;
+}
+
+//聊天消息
+message REQChat {
+optional int64 to_user_id   = 1;				//接收者 默认为0向同一桌所有人发，有值则向指定的人发
+optional int32 chat_msg_id  = 2;				//聊天内容id
+optional bytes chat_msg     = 3;				//聊天内容
+}
+
+//聊天通知
+message NTFChat {
+optional int64 send_user_id = 1;            //聊天发起者
+optional int32 chat_msg_id  = 2;			//聊天内容id
+optional bytes chat_msg     = 3;			//聊天内容
+}
+
+//玩家数据
+message PlayerData
+{
+optional int64      player_id     = 1;
+optional int32      seat          = 2;
+}
+
+//多个玩家数据
+message MutiPlayerData
+{
+repeated PlayerData	player_data	= 1;
+}
+
+//跑得快牌型数据
+message PdkTypeData
+{
+repeated int32      cards     = 1;
+}
