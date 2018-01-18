@@ -38,4 +38,8 @@ public:
 protected:
     vector<KKPLAYERCARDSDATA>          m_pPlayersCardsVec;                                      //玩家牌信息
 //-------------------------玩家牌相关 end-----------------------------------//
+//-------------------------玩家操作相关 begin-------------------------------//
+public:
+    void doOption(KKPLAYEROPTIONDATA option);
+//-------------------------玩家操作相关 end---------------------------------//
 };

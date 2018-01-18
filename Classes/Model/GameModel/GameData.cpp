@@ -101,7 +101,7 @@ const KKPLAYERCARDSDATA GameData::getPlayerCardsData(unsigned long long userId) 
         }
     }
     //不存在打印信息，返回空值
-    CCLOG("玩家（userId=%lld）不存在,(function=getUserCardData)返回空值", userId);
+    CCLOG("玩家（userId=%lld）不存在,(1function=getUserCardData)返回空值", userId);
     return {};
 }
 
@@ -122,7 +122,14 @@ void GameData::getPlayerCardsData(unsigned long long playerId, KKPLAYERCARDSDATA
         }
     }
     //不存在打印信息
-    CCLOG("玩家（playerId=%lld）不存在,(function=getGameCardData)返回空值", playerId);
+    CCLOG("玩家（playerId=%lld）不存在,(2function=getGameCardData)返回空值", playerId);
+}
+
+void GameData::doOption(KKPLAYEROPTIONDATA option)
+{
+    KKPLAYERCARDSDATA cardsData = {};
+    getPlayerCardsData(option.userId, cardsData);
+    
 }
 
 void GameData::reset()

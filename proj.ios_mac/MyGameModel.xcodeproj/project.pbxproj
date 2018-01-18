@@ -107,6 +107,7 @@
 		82E6C1FC1FA737CA000CB211 /* HornService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82E6C1F21FA737CA000CB211 /* HornService.cpp */; };
 		82E6C1FD1FA737CA000CB211 /* MatchChannel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82E6C1F41FA737CA000CB211 /* MatchChannel.cpp */; };
 		82E6C1FE1FA737CA000CB211 /* MatchService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82E6C1F61FA737CA000CB211 /* MatchService.cpp */; };
+		9D3C67CB201112470053324B /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C67CA201112470053324B /* GameConfig.cpp */; };
 		AF08F4E31E696CB00025E028 /* AIUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF08F4E11E696CB00025E028 /* AIUtils.cpp */; };
 		AF1485D11DEFEA2600F35BC9 /* PropCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AF1485CF1DEFEA2600F35BC9 /* PropCommand.cpp */; };
 		AFD84AEA1DF0483A00ED105F /* OnlineConfigCommand.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFD84AE81DF0483A00ED105F /* OnlineConfigCommand.cpp */; };
@@ -409,6 +410,7 @@
 		82E6C1F51FA737CA000CB211 /* MatchChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchChannel.h; sourceTree = "<group>"; };
 		82E6C1F61FA737CA000CB211 /* MatchService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MatchService.cpp; sourceTree = "<group>"; };
 		82E6C1F71FA737CA000CB211 /* MatchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchService.h; sourceTree = "<group>"; };
+		9D3C67CA201112470053324B /* GameConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameConfig.cpp; sourceTree = "<group>"; };
 		AF08F4E11E696CB00025E028 /* AIUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AIUtils.cpp; sourceTree = "<group>"; };
 		AF08F4E21E696CB00025E028 /* AIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUtils.h; sourceTree = "<group>"; };
 		AF1485CF1DEFEA2600F35BC9 /* PropCommand.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropCommand.cpp; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 		82A3B6E02010860600FD4367 /* GameModel */ = {
 			isa = PBXGroup;
 			children = (
+				9D3C67CA201112470053324B /* GameConfig.cpp */,
 				82A3B6E12010860600FD4367 /* GameConfig.h */,
 				82A3B6E8201087B100FD4367 /* GameData.cpp */,
 				82A3B6E9201087B100FD4367 /* GameData.h */,
@@ -1414,6 +1417,7 @@
 				F84A0DD21DC0933F00EC6EB0 /* CommonService.cpp in Sources */,
 				82E6C1FD1FA737CA000CB211 /* MatchChannel.cpp in Sources */,
 				BF1DEAB519D724DB00404AB1 /* ModalLayer.cpp in Sources */,
+				9D3C67CB201112470053324B /* GameConfig.cpp in Sources */,
 				BF1DEAB219D724DB00404AB1 /* EffectUtil.cpp in Sources */,
 				82CE980A1FEE2EC300398F3A /* HallFooter.cpp in Sources */,
 				AFD84AEA1DF0483A00ED105F /* OnlineConfigCommand.cpp in Sources */,

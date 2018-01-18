@@ -7,11 +7,34 @@
 //
 
 #pragma once
+using namespace std;
 //--------------------------------------------------//
 //                                                  //
 //                    enum枚举定义                    //
 //                                                  //
 //--------------------------------------------------//
+
+//操作类型
+enum Game_Option_Type
+{
+    Game_Option_Type_null = -1,
+    Game_Option_Type_mopai,
+    Game_Option_Type_dapai,
+    Game_Option_Type_chi,
+    Game_Option_Type_peng,
+    Game_Option_Type_gang,
+    Game_Option_Type_hu,
+};
+
+//杠的类型
+enum Gang_Type
+{
+    Gang_Type_null = -1,
+    Gang_Type_an,           //暗杠
+    Gang_Type_ming,         //明杠
+    Gang_Type_bu,           //补杠
+};
+
 
 //--------------------------------------------------//
 //                                                  //
@@ -19,7 +42,7 @@
 //                                                  //
 //--------------------------------------------------//
 //玩家信息结构体
-typedef struct UserInfo
+typedef struct UserInfo1
 {
     unsigned long long  nUserId;            //玩家id
     int                 nGender;            //玩家性别(0女、1男、2保密)
@@ -33,7 +56,7 @@ typedef struct UserInfo
     int                 nEscape;            //玩家逃跑数量
     string              sUserName;          //玩家昵称
     string              sIconName;          //玩家头像名称
-    UserInfo()
+    UserInfo1()
     {
         nUserId = 0;
         nGender = 0;
@@ -52,7 +75,7 @@ typedef struct UserInfo
 
 
 //游戏中玩家信息结构体
-typedef struct PlayerInfo : UserInfo
+typedef struct PlayerInfo : UserInfo1
 {
     int                 nRealSeat;          //玩家服务器端座位
     int                 nClientSeat;        //玩家客户端为左
@@ -67,7 +90,7 @@ typedef struct PlayerInfo : UserInfo
 typedef struct PlayerCardsData
 {
     unsigned long long nUserId;
-    int             nCardId;                    //玩家摸牌id
+    int             nDrawCardId;                    //玩家摸牌id
     vector<int>     oHandsCardVec;              //玩家手中牌队列
     vector<int>     oPengCardVec;               //玩家碰牌队列
     vector<int>     oGangCardVec;               //玩家杠牌队列
@@ -76,7 +99,7 @@ typedef struct PlayerCardsData
     PlayerCardsData()
     {
         nUserId = 0;
-        nCardId = -1;
+        nDrawCardId = -1;
         oHandsCardVec = {};
         oPengCardVec = {};
         oGangCardVec = {};
@@ -84,6 +107,24 @@ typedef struct PlayerCardsData
         oOutCardVec = {};
     }
 }KKPLAYERCARDSDATA, *LPKKPLAYERCARDSDATA;
+
+//玩家操作数据结构题
+typedef struct PlayerOptionData
+{
+    unsigned long long userId;      //玩家id
+    int nCardId;                     //操作牌的id
+    Game_Option_Type oOptionType;   //操作类型
+    Gang_Type  oGangType;           //杠的类型
+    std::vector<vector<int>> oCardsVec;  //操作对应的牌的队列
+    PlayerOptionData()
+    {
+        userId = 0;
+        nCardId = -1;
+        oOptionType = Game_Option_Type::Game_Option_Type_null;
+        oGangType = Gang_Type::Gang_Type_null;
+        oCardsVec = {};
+    }
+}KKPLAYEROPTIONDATA, *LPKKPLAYEROPTIONDATA;
 
 //--------------------------------------------------//
 //                                                  //
@@ -98,4 +139,20 @@ typedef struct PlayerCardsData
 //                    资源定义                        //
 //                                                  //
 //--------------------------------------------------//
+
+//--------------------------------------------------//
+//                                                  //
+//                    通用方法定义                    //
+//                                                  //
+//--------------------------------------------------//
+
+namespace GameConfig
+{
+    void doOptionMoPai(PlayerOptionData option, PlayerCardsData& cardsData);
+    void doOptionDaPai(PlayerOptionData option, PlayerCardsData& cardsData);
+    void doOptionChi(PlayerOptionData option, PlayerCardsData& cardsData);
+    void doOptionPeng(PlayerOptionData option, PlayerCardsData& cardsData);
+    void doOptionGang(PlayerOptionData option, PlayerCardsData& cardsData);
+    bool deleOneCardInVec(int cardId, vector<int>& cardVec);
+}
 
