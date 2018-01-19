@@ -129,7 +129,18 @@ void GameData::doOption(KKPLAYEROPTIONDATA option)
 {
     KKPLAYERCARDSDATA cardsData = {};
     getPlayerCardsData(option.userId, cardsData);
-    
+    if(option.oOptionType == Game_Option_Type::Game_Option_Type_mopai)
+    {
+        GameConfig::doOptionMoPai(option, cardsData);
+    }
+    else if(option.oOptionType == Game_Option_Type::Game_Option_Type_dapai)
+    {
+        GameConfig::doOptionDaPai(option, cardsData);
+    }
+    else if(option.oOptionType == Game_Option_Type::Game_Option_Type_chi)
+    {
+        GameConfig::doOptionChi(option, cardsData);
+    }
 }
 
 void GameData::reset()
