@@ -108,13 +108,13 @@ typedef struct PlayerCardsData
     }
 }KKPLAYERCARDSDATA, *LPKKPLAYERCARDSDATA;
 
-//玩家操作数据结构题
+//玩家操作数据结构
 typedef struct PlayerOptionData
 {
-    unsigned long long userId;      //玩家id
-    int nCardId;                     //操作牌的id
-    Game_Option_Type oOptionType;   //操作类型
-    Gang_Type  oGangType;           //杠的类型
+    unsigned long long userId;          //玩家id
+    int nCardId;                        //操作牌的id
+    Game_Option_Type oOptionType;       //操作类型
+    Gang_Type  oGangType;               //杠的类型
     std::vector<vector<int>> oCardsVec;  //操作对应的牌的队列
     PlayerOptionData()
     {

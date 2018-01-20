@@ -47,6 +47,19 @@ void GameData::addPlayerInfo(KKPLAYERINFGO oUserInfo)
     m_pUserInfoVec.push_back(oUserInfo);
 }
 
+const KKPLAYERINFGO GameData::getPlayerInfo(unsigned long long playerId)     //通过玩家id获取信息
+{
+    KKPLAYERINFGO playerInfo;
+    for(int i = 0; i < m_pUserInfoVec.size(); i++)
+    {
+        if(m_pUserInfoVec.at(i).nUserId == playerId)
+        {
+            return m_pUserInfoVec.at(i);
+        }
+    }
+    return playerInfo;
+}
+
 void GameData::leavePlayerInfo(unsigned long long playerId)
 {
     for(int i = 0; i < m_pUserInfoVec.size(); i++)
@@ -140,6 +153,14 @@ void GameData::doOption(KKPLAYEROPTIONDATA option)
     else if(option.oOptionType == Game_Option_Type::Game_Option_Type_chi)
     {
         GameConfig::doOptionChi(option, cardsData);
+    }
+    else if(option.oOptionType == Game_Option_Type::Game_Option_Type_peng)
+    {
+        GameConfig::doOptionPeng(option, cardsData);
+    }
+    else if(option.oOptionType == Game_Option_Type::Game_Option_Type_gang)
+    {
+        GameConfig::doOptionGang(option, cardsData);
     }
 }
 
