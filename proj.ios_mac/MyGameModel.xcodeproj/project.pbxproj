@@ -60,6 +60,9 @@
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
 		820263831FF0A32E00750D5C /* common in Resources */ = {isa = PBXBuildFile; fileRef = 820263821FF0A32E00750D5C /* common */; };
+		8217A94820175B04001C8AA6 /* GameDeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8217A94420175B04001C8AA6 /* GameDeck.cpp */; };
+		8217A94920175B04001C8AA6 /* GamePlayerDeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8217A94620175B04001C8AA6 /* GamePlayerDeck.cpp */; };
+		8217A94C20176617001C8AA6 /* Card.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8217A94A20176617001C8AA6 /* Card.cpp */; };
 		82A3B6E62010860600FD4367 /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82A3B6E22010860600FD4367 /* GameLayer.cpp */; };
 		82A3B6E72010860600FD4367 /* GameMediator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82A3B6E42010860600FD4367 /* GameMediator.cpp */; };
 		82A3B6EA201087B100FD4367 /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82A3B6E8201087B100FD4367 /* GameData.cpp */; };
@@ -313,6 +316,12 @@
 		503AE0FE17EB989F00D1A890 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ios/RootViewController.h; sourceTree = SOURCE_ROOT; };
 		503AE0FF17EB989F00D1A890 /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = SOURCE_ROOT; };
 		820263821FF0A32E00750D5C /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
+		8217A94420175B04001C8AA6 /* GameDeck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDeck.cpp; sourceTree = "<group>"; };
+		8217A94520175B04001C8AA6 /* GameDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDeck.h; sourceTree = "<group>"; };
+		8217A94620175B04001C8AA6 /* GamePlayerDeck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GamePlayerDeck.cpp; sourceTree = "<group>"; };
+		8217A94720175B04001C8AA6 /* GamePlayerDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayerDeck.h; sourceTree = "<group>"; };
+		8217A94A20176617001C8AA6 /* Card.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Card.cpp; sourceTree = "<group>"; };
+		8217A94B20176617001C8AA6 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		82A3B6E12010860600FD4367 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		82A3B6E22010860600FD4367 /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameLayer.cpp; sourceTree = "<group>"; };
 		82A3B6E32010860600FD4367 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
@@ -839,8 +848,14 @@
 		82A3B6E02010860600FD4367 /* GameModel */ = {
 			isa = PBXGroup;
 			children = (
+				8217A94A20176617001C8AA6 /* Card.cpp */,
+				8217A94B20176617001C8AA6 /* Card.h */,
 				9D3C67CA201112470053324B /* GameConfig.cpp */,
 				82A3B6E12010860600FD4367 /* GameConfig.h */,
+				8217A94420175B04001C8AA6 /* GameDeck.cpp */,
+				8217A94520175B04001C8AA6 /* GameDeck.h */,
+				8217A94620175B04001C8AA6 /* GamePlayerDeck.cpp */,
+				8217A94720175B04001C8AA6 /* GamePlayerDeck.h */,
 				82A3B6E8201087B100FD4367 /* GameData.cpp */,
 				82A3B6E9201087B100FD4367 /* GameData.h */,
 				82A3B6E22010860600FD4367 /* GameLayer.cpp */,
@@ -1428,6 +1443,7 @@
 				2829C80F19E7B775007E1A8B /* AnimateUtil.cpp in Sources */,
 				2850EF1619C154920002315E /* generated_message_util.cc in Sources */,
 				BF1DEAB019D724DB00404AB1 /* ColorUtil.cpp in Sources */,
+				8217A94C20176617001C8AA6 /* Card.cpp in Sources */,
 				82C059951FEBDDB900A55180 /* EventWrapper.cpp in Sources */,
 				82A9785B1FEBEBE300B99A6E /* HallLayer.cpp in Sources */,
 				2850EF1419C154920002315E /* extension_set_heavy.cc in Sources */,
@@ -1477,6 +1493,7 @@
 				2850EF0C19C154920002315E /* workqueue.cpp in Sources */,
 				82C059991FEBDDBF00A55180 /* Mediator.cpp in Sources */,
 				82E6C1F81FA737CA000CB211 /* GameChannel.cpp in Sources */,
+				8217A94920175B04001C8AA6 /* GamePlayerDeck.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				F84A0DE31DC0987400EC6EB0 /* paodekuaiProtocol.pb.cc in Sources */,
 				BF1DEAAB19D724DB00404AB1 /* WebResult.cpp in Sources */,
@@ -1511,6 +1528,7 @@
 				BF1DEAAF19D724DB00404AB1 /* SysUtil.cpp in Sources */,
 				288846D91A67DDBD000A725E /* ImageLoader.cpp in Sources */,
 				82C059AC1FEBDDCC00A55180 /* TimeTick.cpp in Sources */,
+				8217A94820175B04001C8AA6 /* GameDeck.cpp in Sources */,
 				82A3B6E72010860600FD4367 /* GameMediator.cpp in Sources */,
 				82CE98211FEE4A6500398F3A /* BaseEditDialog.cpp in Sources */,
 				82E6C1F91FA737CA000CB211 /* GameChannelTable.cpp in Sources */,

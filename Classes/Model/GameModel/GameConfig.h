@@ -35,6 +35,27 @@ enum Gang_Type
     Gang_Type_bu,           //补杠
 };
 
+//座位(是根据客户端座位id来进行分配的，客户端是本家，其他玩家根据本家进行调整的座位)
+enum Player_Seat_Type
+{
+    Player_Seat_Type_null = -1,
+    Player_Seat_Type_0,       //本家
+    Player_Seat_Type_1,       //下家
+    Player_Seat_Type_2,       //对家
+    Player_Seat_Type_3,       //上家
+    
+};
+
+//牌位置类型
+enum Card_Seat_Type
+{
+    Card_Seat_Type_null = -1,
+    Card_Seat_Type_wall,        //牌墙区域的牌
+    Card_Seat_Type_out,         //打出区域的牌
+    Card_Seat_Type_hand,        //手中区域的牌
+    Card_Seat_Type_peng,        //碰杠吃区域牌
+};
+
 
 //--------------------------------------------------//
 //                                                  //
