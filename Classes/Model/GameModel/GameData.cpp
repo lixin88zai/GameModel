@@ -164,6 +164,16 @@ void GameData::doOption(KKPLAYEROPTIONDATA option)
     }
 }
 
+int GameData::getCardTotalNum()          //获取牌的总数
+{
+    return 108;
+}
+
+int GameData::getPlayerTotalNum()
+{
+    return 4;
+}
+
 void GameData::reset()
 {
     continueReset();

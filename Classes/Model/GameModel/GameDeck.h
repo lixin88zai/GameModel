@@ -13,6 +13,7 @@
 #include "extensions/cocos-ext.h"
 #include "cocos2d.h"
 #include "Config/Config.h"
+#include "Card.h"
 
 class GameDeck : public cocos2d::Layer, public EventWrapper, public TimeTick
 {
@@ -24,12 +25,22 @@ public:
     
 public:
     void reset();
-//---------------------------------- 牌墙相关 ---------------------------------------//
+//---------------------------------- 牌墙相关 BEGIN ---------------------------------------//
 public:
-    void initWall();
-    
+    void initWall();        //加载牌墙
+    void getWallCardVec(vector<Card*> &cardVec);    //获取牌墙，运用引用返回牌墙，对牌墙进行操作
+    void showWall();
+    void hideWall();
+protected:
+    vector<Card*>   m_oWallCardVec;     //牌墙队列
+//---------------------------------- 牌墙相关 END -----------------------------------------//
 
+    
+    
 protected:
     Player_Seat_Type m_oSeatType;
+    
+//---------------------------------- 牌墙相关 BEGIN ---------------------------------------//
+//---------------------------------- 牌墙相关 END -----------------------------------------//
 
 };

@@ -129,4 +129,16 @@ namespace GameConfig
         }        
         return false;
     }
+    bool cardIdIsValue(int cardId)
+    {
+        bool isValue = false;
+        if((cardId >= 101 && cardId <= 109)         //万
+           || (cardId >= 201 && cardId <= 209)      //条
+           || (cardId >= 301 && cardId <= 309))     //筒
+        {
+            isValue = true;
+        }
+        
+        return isValue;
+    }
 }

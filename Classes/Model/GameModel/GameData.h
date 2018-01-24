@@ -21,6 +21,10 @@ public:
     virtual bool init();
     virtual void reset();               //退出游戏重置游戏数据
     virtual void continueReset();       //继续游戏重置游戏数据
+//-------------------------游戏数据相关  begin-------------------------------//
+    int getCardTotalNum();          //获取牌的总数
+    int getPlayerTotalNum();        //获取玩家数量
+//-------------------------游戏数据相关  end---------------------------------//
 //-------------------------玩家信息数据相关  begin----------------------------//
 public:
     void addPlayerInfo(KKPLAYERINFGO oUserInfo);                        //添加一个玩家信息

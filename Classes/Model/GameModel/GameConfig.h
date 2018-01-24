@@ -8,6 +8,15 @@
 
 #pragma once
 using namespace std;
+
+//--------------------------------------------------//
+//                                                  //
+//                    一些数据定义                    //
+//                                                  //
+//--------------------------------------------------//
+
+
+
 //--------------------------------------------------//
 //                                                  //
 //                    enum枚举定义                    //
@@ -160,6 +169,18 @@ typedef struct PlayerOptionData
 //                    资源定义                        //
 //                                                  //
 //--------------------------------------------------//
+#define GAME_CARD_BACK_WALL_OWN     "game/cardback/card_back_wall_own.png"
+#define GAME_CARD_BACK_WALL_SIDE    "game/cardback/card_back_wall_side.png"
+#define GAME_CARD_BACK_WALL_Up      "game/cardback/card_back_wall_up.png"
+#define GAME_CARD_FACE_WHITE_OWN    "game/cardback/card_face_white_own.png"
+#define GAME_CARD_FACE_WHITE_SIDE   "game/cardback/card_face_white_side.png"
+#define GAME_CARD_FACE_WHITE_UP     "game/cardback/card_face_white_up.png"
+#define GAME_CARD_STAND_OWN         "game/cardback/card_stand_own.png"
+#define GAME_CARD_STAND_SIDE        "game/cardback/card_stand_side.png"
+#define GAME_CARD_STAND_UP          "game/cardback/card_stand_up.png"
+
+#define GAME_CARD_ID_NAME_STR_SHU   "game/cardback/card_shu_%d.png"
+#define GAME_CARD_ID_NAME_STR_HENG  "game/cardback/card_heng_%d.png"
 
 //--------------------------------------------------//
 //                                                  //
@@ -175,5 +196,6 @@ namespace GameConfig
     void doOptionPeng(PlayerOptionData option, PlayerCardsData& cardsData);
     void doOptionGang(PlayerOptionData option, PlayerCardsData& cardsData);
     bool deleOneCardInVec(int cardId, vector<int>& cardVec);
+    bool cardIdIsValue(int cardId);
 }
 
