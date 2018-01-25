@@ -24,6 +24,7 @@ public:
 public:
     void initBcak();        //加载牌背景
     void initCardId();      //加载牌正面id
+    int getCardId();        //获取牌的id
 private:
     Card_Seat_Type  m_oCardSeatType;   //牌区域状态
     Player_Seat_Type    m_oPlayerSeatType;  //玩家座位状态

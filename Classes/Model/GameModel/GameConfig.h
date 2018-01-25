@@ -120,7 +120,7 @@ typedef struct PlayerInfo : UserInfo1
 typedef struct PlayerCardsData
 {
     unsigned long long nUserId;
-    int             nDrawCardId;                    //玩家摸牌id
+    int             nDrawCardId;                //玩家摸牌id
     vector<int>     oHandsCardVec;              //玩家手中牌队列
     vector<int>     oPengCardVec;               //玩家碰牌队列
     vector<int>     oGangCardVec;               //玩家杠牌队列

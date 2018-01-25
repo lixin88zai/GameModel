@@ -123,6 +123,11 @@ void Card::initCardId()      //加载牌正面id
     }
 }
 
+int Card::getCardId()        //获取牌的id
+{
+    return m_nCardId;
+}
+
 
 Card::Card()
 :m_oCardSeatType(Card_Seat_Type_null),

@@ -86,6 +86,71 @@ void GameDeck::hideWall()
     }
 }
 
+void GameDeck::addOutCard(int cardId)
+{
+    Card* outCard = Card::create(Card_Seat_Type::Card_Seat_Type_out, m_oSeatType, cardId);
+    outCard->setPosition(0, 0);
+    addChild(outCard);
+    
+    m_oOutCardVec.push_back(outCard);
+}
+void GameDeck::addOutCard(vector<int> cardIdVec)
+{
+    for(int i = 0; i < cardIdVec.size(); i++)
+    {
+        addOutCard(cardIdVec.at(i));
+    }
+}
+
+void GameDeck::addHandCard(int cardId)
+{
+    Card* handCard = Card::create(Card_Seat_Type::Card_Seat_Type_hand, m_oSeatType);
+    handCard->setPosition(Vec2(0, 0));
+    addChild(handCard);
+    
+    m_oHandCardVec.push_back(handCard);
+}
+
+void GameDeck::addHandCard(vector<int> cardIdVec, bool isShow)
+{
+    for(int i = 0; i < cardIdVec.size(); i++)
+    {
+        addHandCard(cardIdVec.at(i));
+    }
+}
+
+void GameDeck::addDrawCard(int cardId)   //添加摸牌
+{
+    m_oDrawCard = Card::create(Card_Seat_Type::Card_Seat_Type_hand, m_oSeatType);
+    m_oDrawCard->setPosition(Vec2(0, 0));
+    addChild(m_oDrawCard);
+    
+    m_oHandCardVec.push_back(m_oDrawCard);
+}
+
+void GameDeck::addPGCCard(PlayerOptionData optionData)
+{
+    if(optionData.oOptionType == Game_Option_Type::Game_Option_Type_gang
+       && optionData.oGangType == Gang_Type::Gang_Type_bu)
+    {
+        for(int i = 0; i < m_oPGCCardVec.size(); i++)
+        {
+            if(m_oPGCCardVec.at(i)->getCardId() == optionData.nCardId)
+            {
+                m_oPGCCardVec.at(i)->pengUpGang();
+            }
+        }
+    }
+    else
+    {
+        CardsNode* cardsNode = CardsNode::create(m_oSeatType, optionData.oCardsVec.at(0), optionData.oOptionType, optionData.oGangType);
+        cardsNode->setPosition(Vec2(0, 0));
+        addChild(cardsNode);
+        
+        m_oPGCCardVec.push_back(cardsNode);
+    }
+}
+
 
 GameDeck::GameDeck():
 m_oSeatType(Player_Seat_Type_null)
@@ -94,6 +159,100 @@ m_oSeatType(Player_Seat_Type_null)
 }
 
 GameDeck::~GameDeck()
+{
+    
+}
+
+
+
+//----------------------------------------------------------------------------------//
+//-----------------------------------牌组--------------------------------------------//
+//----------------------------------------------------------------------------------//
+
+CardsNode* CardsNode::create(Player_Seat_Type seatType, vector<int> cardIdVec, Game_Option_Type optionType, Gang_Type gangType)
+{
+    CardsNode* cardNode = new CardsNode();
+    if(cardNode->init(seatType, cardIdVec, optionType, gangType))
+    {
+        return cardNode;
+    }
+    delete cardNode;
+    cardNode = NULL;
+    return NULL;
+}
+
+bool CardsNode::init(Player_Seat_Type seatType, vector<int> cardIdVec, Game_Option_Type optionType, Gang_Type gangType)
+{
+    if(!Node::init())
+    {
+        return false;
+    }
+    
+    m_oPlayerSeatType = seatType;
+    m_oOptionType = optionType;
+    m_oGangType = gangType;
+    m_oCardIdVec = cardIdVec;
+    
+    if(optionType == Game_Option_Type::Game_Option_Type_peng
+       || optionType == Game_Option_Type::Game_Option_Type_gang)
+    {
+        m_nCardId = cardIdVec.at(0);
+    }
+    
+    if(optionType == Game_Option_Type::Game_Option_Type_chi || optionType == Game_Option_Type::Game_Option_Type_peng)
+    {
+        for(int i = 0; i < cardIdVec.size(); i++)
+        {
+            Card* card = Card::create(Card_Seat_Type::Card_Seat_Type_peng, m_oPlayerSeatType, cardIdVec.at(i));
+            card->setPosition(Vec2(card->getContentSize().width * i, card->getContentSize().height / 2));
+            addChild(card);
+        }
+    }
+    else if(optionType == Game_Option_Type::Game_Option_Type_gang)
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            Card* card = Card::create(Card_Seat_Type::Card_Seat_Type_peng, m_oPlayerSeatType, cardIdVec.at(i));
+            card->setPosition(Vec2(card->getContentSize().width * i, card->getContentSize().height / 2));
+            addChild(card);
+        }
+        
+        Card* card = Card::create(Card_Seat_Type::Card_Seat_Type_peng, m_oPlayerSeatType, cardIdVec.at(0));
+        card->setPosition(Vec2(card->getContentSize().width, card->getContentSize().height / 2 + 10));
+        addChild(card);
+    }
+    return true;
+}
+
+void CardsNode::pengUpGang()
+{
+    if(m_oOptionType != Game_Option_Type::Game_Option_Type_peng)
+    {
+        CCLOG("碰牌升级为杠牌失败，本牌组不是碰牌");
+        return;
+    }
+    m_oOptionType = Game_Option_Type::Game_Option_Type_gang;
+    
+    Card* card = Card::create(Card_Seat_Type::Card_Seat_Type_peng, m_oPlayerSeatType, m_oCardIdVec.at(0));
+    card->setPosition(Vec2(card->getContentSize().width, card->getContentSize().height / 2 + 10));
+    addChild(card);
+}
+
+const vector<int> CardsNode::getCardIdVec()
+{
+    return m_oCardIdVec;
+}
+
+CardsNode::CardsNode():
+m_oOptionType(Game_Option_Type_null),
+m_oGangType(Gang_Type_null),
+m_nCardId(-1),
+m_oPlayerSeatType(Player_Seat_Type_null),
+m_oCardIdVec({})
+{
+    
+}
+CardsNode::~CardsNode()
 {
     
 }
