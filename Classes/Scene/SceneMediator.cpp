@@ -10,6 +10,7 @@
 #include "Config/Config.h"
 #include "AppDelegate.h"
 #include "SceneHall.h"
+#include "Scene/SceneGame.h"
 USING_NS_CC;
 using namespace std;
 using namespace profile;
@@ -52,6 +53,11 @@ void SceneMediator::onChange()
     {
         m_pScene = SceneHall::create();
     }
+    else if(eCurr == kSceneGame)
+    {
+        m_pScene = SceneGame::create();
+    }
+    
     if (m_pScene)
     {
         m_pScene->retain();

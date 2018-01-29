@@ -60,7 +60,8 @@ protected:
 //---------------------------------- 碰牌相关 END -----------------------------------------//
     
 protected:
-    Player_Seat_Type m_oSeatType;
+    CC_SYNTHESIZE(Player_Seat_Type, m_oSeatType, SeatType);
+    CC_SYNTHESIZE(unsigned long long, m_oPlayerId, PlayerId);
     
 //---------------------------------- 牌墙相关 BEGIN ---------------------------------------//
 //---------------------------------- 牌墙相关 END -----------------------------------------//

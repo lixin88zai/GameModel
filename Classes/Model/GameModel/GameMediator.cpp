@@ -35,7 +35,16 @@ void GameMediator::handleEventData(const string &sEvent, void *pData)
 void GameMediator::onRegister()
 {
     onRemove();
-    
+    //添加gameLayer
+    m_oGameLayer = GameLayer::create();
+    AppView::getInstance()->addTo(AppView::kLayerAds, m_oGameLayer);
+    //添加玩家桌面
+    for(int i = 0; i < 4; i++)
+    {
+        GameDeck* gameDeck = GameDeck::create();
+        AppView::getInstance()->addTo(AppView::kLayerAds, gameDeck);
+        m_oPlayerDeckVec.push_back(gameDeck);
+    }
 }
 
 void GameMediator::onRemove()

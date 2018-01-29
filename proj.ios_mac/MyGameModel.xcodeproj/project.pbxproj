@@ -59,6 +59,7 @@
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
 		503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FF17EB989F00D1A890 /* RootViewController.mm */; };
+		82008AB0201F1C5000C2F567 /* SceneGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82008AAE201F1C5000C2F567 /* SceneGame.cpp */; };
 		820263831FF0A32E00750D5C /* common in Resources */ = {isa = PBXBuildFile; fileRef = 820263821FF0A32E00750D5C /* common */; };
 		8206BE722018CECA00573935 /* game in Resources */ = {isa = PBXBuildFile; fileRef = 8206BE712018CECA00573935 /* game */; };
 		8217A94820175B04001C8AA6 /* GameDeck.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8217A94420175B04001C8AA6 /* GameDeck.cpp */; };
@@ -316,6 +317,8 @@
 		503AE0FD17EB989F00D1A890 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ios/Prefix.pch; sourceTree = SOURCE_ROOT; };
 		503AE0FE17EB989F00D1A890 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ios/RootViewController.h; sourceTree = SOURCE_ROOT; };
 		503AE0FF17EB989F00D1A890 /* RootViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = SOURCE_ROOT; };
+		82008AAE201F1C5000C2F567 /* SceneGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SceneGame.cpp; path = ../../Classes/Scene/SceneGame.cpp; sourceTree = "<group>"; };
+		82008AAF201F1C5000C2F567 /* SceneGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneGame.h; path = ../../Classes/Scene/SceneGame.h; sourceTree = "<group>"; };
 		820263821FF0A32E00750D5C /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
 		8206BE712018CECA00573935 /* game */ = {isa = PBXFileReference; lastKnownFileType = folder; path = game; sourceTree = "<group>"; };
 		8217A94420175B04001C8AA6 /* GameDeck.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameDeck.cpp; sourceTree = "<group>"; };
@@ -1021,6 +1024,8 @@
 		82E6C1E61FA73343000CB211 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				82008AAE201F1C5000C2F567 /* SceneGame.cpp */,
+				82008AAF201F1C5000C2F567 /* SceneGame.h */,
 				82D1E1F71FECA449009C7085 /* SceneConfig.h */,
 				82C059061FEBB62000A55180 /* SceneHall.cpp */,
 				82C059071FEBB62000A55180 /* SceneHall.h */,
@@ -1422,6 +1427,7 @@
 				82E6C1FC1FA737CA000CB211 /* HornService.cpp in Sources */,
 				82C059081FEBB62000A55180 /* SceneHall.cpp in Sources */,
 				BF1DEAB319D724DB00404AB1 /* CppCallObjectC.mm in Sources */,
+				82008AB0201F1C5000C2F567 /* SceneGame.cpp in Sources */,
 				BFBCB5071ABB05F600A421EB /* CharsetUtil.cpp in Sources */,
 				2850EF3D19C154920002315E /* ccasyncsocketx.cpp in Sources */,
 				82CE98201FEE4A6500398F3A /* BaseDialogNoBackground.cpp in Sources */,

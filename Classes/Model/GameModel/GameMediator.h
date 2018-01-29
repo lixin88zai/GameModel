@@ -11,6 +11,8 @@
 #include "Mediator.h"
 #include "BaseClass/TimeTick/TimeTick.h"
 #include "Config/Config.h"
+#include "GameLayer.h"
+#include "GameDeck.h"
 
 class GameMediator : public Mediator, public TimeTick
 {
@@ -34,4 +36,6 @@ public:
     
 private:
     cocos2d::Layer* m_pDialogLayer;
+    vector<GameDeck*> m_oPlayerDeckVec;
+    GameLayer* m_oGameLayer;
 };
