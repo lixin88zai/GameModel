@@ -13,20 +13,72 @@
 
 
 USING_NS_CC;
-
+/*------------------------------牌墙相关参数----------------------------------------*/
 //牌墙开始的位置
+static const Size wall_card_size02 = Size(39, 60);
+static const Size wall_card_size13 = Size(54, 46);
+
+
 static const Vec2 wall_position_start[4] = {
-    Vec2(DEVICE_W / 2 + 252 * SCALE_FIT, 160 * SCALE_Y),
-    Vec2(DEVICE_W - 310 * SCALE_X, 338.5 * SCALE_Y + 15.5 * (13 - 1) * SCALE_FIT),
-    Vec2(DEVICE_W / 2 - 252 * SCALE_FIT, 517 * SCALE_Y),
-    Vec2(300 * SCALE_X, 338.5 * SCALE_Y - 15.5 * (13 - 1) * SCALE_FIT)
+    Vec2(DEVICE_W / 2, 160 * SCALE_Y),
+    Vec2(DEVICE_W - 310 * SCALE_X, DEVICE_H / 2),
+    Vec2(DEVICE_W / 2, 517 * SCALE_Y),
+    Vec2(300 * SCALE_X, DEVICE_H / 2)
 };
-static const Vec2 wall_poistion_offset[] = {
-    Vec2(0, 0),
-    Vec2(0, 0),
-    Vec2(0, 0),
-    Vec2(0, 0)
+//牌墙两堆之间的偏移量
+static const Vec2 wall_cardheap_offset[4] = {
+    Vec2(-39 * SCALE_X, 0),
+    Vec2(0, 32 * SCALE_Y),
+    Vec2(39 * SCALE_X, 0),
+    Vec2(0, -32 * SCALE_Y)
 };
+
+//牌墙上下两张牌的偏移量
+static const Vec2 wall_updown_offset[4] = {
+    Vec2(0, -10),
+    Vec2(0, -10),
+    Vec2(0, -10),
+    Vec2(0, -10),
+};
+
+//牌墙每张牌的z轴系数
+static const int wall_z_ratio[4] = {
+    0,
+    -1,
+    0,
+    1,
+};
+
+
+/*------------------------------出牌相关参数----------------------------------------*/
+
+//出牌开始位置
+static const Vec2 out_position_start[4] = {
+    Vec2(DEVICE_W / 2 - 39 * SCALE_X * 3.5, 300 * SCALE_Y),
+    Vec2(DEVICE_W - 435 * SCALE_X, DEVICE_H / 2 - 32 * SCALE_X * 2.5),
+    Vec2(DEVICE_W / 2 + 39 * SCALE_X * 3.5, DEVICE_H - 226 * SCALE_Y),
+    Vec2(DEVICE_W - 435 * SCALE_X, DEVICE_H / 2 + 32 * SCALE_X * 2.5),
+};
+
+//两张牌之间的偏移量
+static const Vec2 out_card_offset[4] = {
+    Vec2(39, 0),
+    Vec2(0, 35),
+    Vec2(-39, 0),
+    Vec2(0, -35),
+};
+
+//两行之间的偏移量
+static const Vec2 out_line_offset[4] = {
+    Vec2(0, -48),
+    Vec2(51, 0),
+    Vec2(0, 48),
+    Vec2(-51, 0),
+};
+
+//两行的z轴高度的起始位置
+static const int out_line_z_start[4][2] = {{10, 20}, {10, 10}, {20, 10}, {10, 10}};
+static const int out_line_z_ratio[4] = {0, 1, 0, -1};
 
 bool GameDeck::init()
 {
@@ -54,11 +106,13 @@ void GameDeck::initWall()        //加载牌墙
             wallCardTotalNum -= 1;
         }
     }
+    
+    Vec2 startPosition = wall_position_start[m_oSeatType] + wall_cardheap_offset[m_oSeatType] * (wallCardTotalNum / 2 / 2) * (-1);
     for(int i = 0; i < wallCardTotalNum; i++)
     {
         Card* wallCard = Card::create(Card_Seat_Type::Card_Seat_Type_wall, m_oSeatType);
-        wallCard->setPosition(wall_position_start[m_oSeatType] + Vec2(i / 2 * wall_poistion_offset[m_oSeatType].x, i % 2 * wall_poistion_offset[m_oSeatType].y));
-        wallCard->setLocalZOrder(i % 2 * (-1));
+        wallCard->setPosition(startPosition + wall_cardheap_offset[m_oSeatType] * (i / 2) + wall_updown_offset[m_oSeatType] * (i % 2));
+        wallCard->setLocalZOrder(100 + wall_z_ratio[m_oSeatType] * i);
         addChild(wallCard);
         
         m_oWallCardVec.push_back(wallCard);
@@ -89,8 +143,24 @@ void GameDeck::hideWall()
 void GameDeck::addOutCard(int cardId)
 {
     Card* outCard = Card::create(Card_Seat_Type::Card_Seat_Type_out, m_oSeatType, cardId);
-    outCard->setPosition(0, 0);
     addChild(outCard);
+    
+    //设置位置
+    int outCardSize = (int)m_oOutCardVec.size();
+    Vec2 startPosition = out_position_start[m_oSeatType];
+    if(outCardSize + 1 > 8)
+    {
+        startPosition = out_position_start[m_oSeatType] - out_card_offset[m_oSeatType] + out_line_offset[m_oSeatType];
+    }
+    Vec2 position = startPosition +  out_card_offset[m_oSeatType] * (outCardSize % 8);
+    outCard->setPosition(position);
+    
+    //设置z轴
+    if(outCardSize / 8 < 2)
+    {
+        int z = out_line_z_start[m_oSeatType][outCardSize / 8] + out_line_z_ratio[m_oSeatType];
+        outCard->setLocalZOrder(z);
+    }
     
     m_oOutCardVec.push_back(outCard);
 }
