@@ -43,9 +43,13 @@ void GameMediator::onRegister()
     {
         GameDeck* gameDeck = GameDeck::create();
         gameDeck->setSeatType(Player_Seat_Type(i));
-        
         AppView::getInstance()->addTo(AppView::kLayerAds, gameDeck);
         m_oPlayerDeckVec.push_back(gameDeck);
+    }
+    
+    for(int i = 0; i < m_oPlayerDeckVec.size(); i++)
+    {
+        m_oPlayerDeckVec.at(i)->initWall();
     }
 }
 

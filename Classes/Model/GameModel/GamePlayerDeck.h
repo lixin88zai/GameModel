@@ -13,12 +13,12 @@
 #include "extensions/cocos-ext.h"
 #include "cocos2d.h"
 
-class GameLayer : public cocos2d::Layer, public EventWrapper, public TimeTick
+class GamePlayerDeck : public cocos2d::Layer, public EventWrapper, public TimeTick
 {
 public:
-    CREATE_FUNC(GameLayer);
-    GameLayer();
-    ~GameLayer();
+    CREATE_FUNC(GamePlayerDeck);
+    GamePlayerDeck();
+    ~GamePlayerDeck();
     virtual bool init();    
     
     void initView();

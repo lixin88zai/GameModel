@@ -6,7 +6,7 @@
 //
 //
 
-#include "GameLayer.h"
+#include "GamePlayerDeck.h"
 #include "Util/Utils.h"
 #include "Config/Config.h"
 
@@ -14,7 +14,7 @@
 USING_NS_CC;
 
 
-bool GameLayer::init()
+bool GamePlayerDeck::init()
 {
     if(!Layer::init())
     {
@@ -25,7 +25,7 @@ bool GameLayer::init()
     return true;
 }
 
-void GameLayer::initView()
+void GamePlayerDeck::initView()
 {
     Sprite* pSprite = Sprite::create(BG_HALL);
     pSprite->setScale(SCALE_X, SCALE_Y);
@@ -34,12 +34,12 @@ void GameLayer::initView()
     addChild(pSprite);
 }
 
-GameLayer::GameLayer()
+GamePlayerDeck::GamePlayerDeck()
 {
     
 }
 
-GameLayer::~GameLayer()
+GamePlayerDeck::~GamePlayerDeck()
 {
     
 }
