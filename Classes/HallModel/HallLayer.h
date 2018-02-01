@@ -13,6 +13,10 @@
 #include "extensions/cocos-ext.h"
 #include "cocos2d.h"
 
+USING_NS_CC;
+USING_NS_CC_EXT;
+using namespace cocos2d::ui;
+
 class HallLayer : public cocos2d::Layer, public EventWrapper, public TimeTick
 {
 public:
@@ -22,4 +26,7 @@ public:
     virtual bool init();    
     
     void initView();
+    
+private:
+    void buttonTouched(Ref* sender,TouchEventType touchType);
 };

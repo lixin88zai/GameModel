@@ -17,6 +17,7 @@
 #define NTF_MENU_CLICK          "NTF_MENU_CLICK"
 
 
+
 //--------------------------------------------------//
 //                                                  //
 //                    资源定义                        //
@@ -24,6 +25,7 @@
 //--------------------------------------------------//
 #define BG_HALL                 "hall/bg_hall.png"
 #define HALL_BG_BACK            "hall/bg_hall_back.png"
+#define HALL_BTN_STARTGAME      "hall/btn_startgame.png"
 
 
 #define ICON_HEAD_DEFAULT       "hall/icon_head_default.png"

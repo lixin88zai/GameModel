@@ -11,7 +11,7 @@
 #include "Config/Config.h"
 
 
-USING_NS_CC;
+
 
 
 bool HallLayer::init()
@@ -32,6 +32,28 @@ void HallLayer::initView()
     pSprite->setAnchorPoint(Vec2::ZERO);
     pSprite->setPosition(Vec2::ZERO);
     addChild(pSprite);
+    
+    Button* button = Button::create(HALL_BTN_STARTGAME, HALL_BTN_STARTGAME);
+    button->addTouchEventListener(this, toucheventselector(HallLayer::buttonTouched));
+    button->setPosition(Vec2(DEVICE_W /2, DEVICE_H / 2));
+    button->setTag(0);
+    addChild(button);
+}
+
+void HallLayer::buttonTouched(Ref* sender,TouchEventType touchType)
+{
+    Node* node = static_cast<Node*>(sender);
+    int tag = node->getTag();
+    switch(tag)
+    {
+        case 0:
+        {
+            Value oData = Value(kSceneGame);
+            dispatchEvent(SCENE_EVT_SCENE_CHANGE, &oData);
+        }break;
+        default:
+            break;
+    }
 }
 
 HallLayer::HallLayer()

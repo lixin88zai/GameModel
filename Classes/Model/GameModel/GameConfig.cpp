@@ -1,7 +1,3 @@
-
-
-
-
 #include "GameConfig.h"
 
 namespace GameConfig

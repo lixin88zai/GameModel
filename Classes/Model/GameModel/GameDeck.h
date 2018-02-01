@@ -12,8 +12,8 @@
 #include "BaseClass/TimeTick/TimeTick.h"
 #include "extensions/cocos-ext.h"
 #include "cocos2d.h"
-#include "Config/Config.h"
 #include "Card.h"
+#include "Config/Config.h"
 
 class CardsNode;
 

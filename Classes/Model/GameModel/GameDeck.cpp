@@ -63,22 +63,69 @@ static const Vec2 out_position_start[4] = {
 //两张牌之间的偏移量
 static const Vec2 out_card_offset[4] = {
     Vec2(39, 0),
-    Vec2(0, 35),
+    Vec2(0, 35 * SCALE_Y),
     Vec2(-39, 0),
-    Vec2(0, -35),
+    Vec2(0, -35 * SCALE_Y),
 };
 
 //两行之间的偏移量
 static const Vec2 out_line_offset[4] = {
-    Vec2(0, -48),
-    Vec2(51, 0),
-    Vec2(0, 48),
-    Vec2(-51, 0),
+    Vec2(0, -48 * SCALE_Y),
+    Vec2(51 * SCALE_X, 0),
+    Vec2(0, 48 * SCALE_Y),
+    Vec2(-51 * SCALE_X, 0),
 };
 
-//两行的z轴高度的起始位置
+//打出的牌两行的z轴高度的起始高度
 static const int out_line_z_start[4][2] = {{10, 20}, {10, 10}, {20, 10}, {10, 10}};
 static const int out_line_z_ratio[4] = {0, 1, 0, -1};
+
+/*------------------------------手牌相关参数----------------------------------------*/
+static const Vec2 hand_position_start[4] = {
+    Vec2(DEVICE_W - 320 * SCALE_X, 70 * SCALE_Y),
+    Vec2(DEVICE_W - 200 * SCALE_X, DEVICE_H - 112 * SCALE_Y),
+    Vec2(522 * SCALE_X, DEVICE_H - 92 * SCALE_Y),
+    Vec2(200 * SCALE_X, 280 * SCALE_Y),
+};
+
+static const Vec2 hand_card_offset[4] = {
+    Vec2(86 * SCALE_X, 0),
+    Vec2(0, -30 * SCALE_Y),
+    Vec2(32 * SCALE_X, 0),
+    Vec2(0, 30 * SCALE_Y),
+};
+
+static const int hand_z_ratio[4] = {0, -1, 0, 1};
+
+static const Vec2 hand_draw_position[4] = {
+    Vec2(DEVICE_W - 216 * SCALE_X, 70 * SCALE_Y),
+    Vec2(DEVICE_W - 200 * SCALE_X, DEVICE_H - 70 * SCALE_Y),
+    Vec2(452 * SCALE_X, DEVICE_H - 92 * SCALE_Y),
+    Vec2(200 * SCALE_X, 227 * SCALE_Y),
+};
+
+/*------------------------------手牌相关参数----------------------------------------*/
+static const Vec2 pgnode_position_start[4] = {
+    Vec2(55 * SCALE_X, 61 * SCALE_Y),
+    Vec2(DEVICE_W - 200 * SCALE_X, 197 * SCALE_Y),
+    Vec2(DEVICE_W - 318 * SCALE_X, DEVICE_H - 89 * SCALE_Y),
+    Vec2(190 * SCALE_X, DEVICE_H - 50 * SCALE_Y),
+};
+
+static const Vec2 pgnode_position_offset[4] = {
+    Vec2(20 * SCALE_X, 0),
+    Vec2(0, -13 * SCALE_Y),
+    Vec2(-8 * SCALE_X, 0),
+    Vec2(0, 13 * SCALE_Y),
+};
+
+static const Vec2 pgnode_position_xy_ratio[4] = {
+    Vec2(1, 0),
+    Vec2(0, 1),
+    Vec2(-1, 0),
+    Vec2(0, -1),
+};
+
 
 bool GameDeck::init()
 {
@@ -175,8 +222,10 @@ void GameDeck::addOutCard(vector<int> cardIdVec)
 void GameDeck::addHandCard(int cardId)
 {
     Card* handCard = Card::create(Card_Seat_Type::Card_Seat_Type_hand, m_oSeatType);
-    handCard->setPosition(Vec2(0, 0));
     addChild(handCard);
+    handCard->setPosition(hand_position_start[m_oSeatType] + hand_card_offset[m_oSeatType] * m_oHandCardVec.size());
+    //设置z轴
+    handCard->setLocalZOrder(20 + hand_z_ratio[m_oSeatType]);
     
     m_oHandCardVec.push_back(handCard);
 }
@@ -192,9 +241,9 @@ void GameDeck::addHandCard(vector<int> cardIdVec, bool isShow)
 void GameDeck::addDrawCard(int cardId)   //添加摸牌
 {
     m_oDrawCard = Card::create(Card_Seat_Type::Card_Seat_Type_hand, m_oSeatType);
-    m_oDrawCard->setPosition(Vec2(0, 0));
+    m_oDrawCard->setPosition(hand_draw_position[m_oSeatType]);
     addChild(m_oDrawCard);
-    
+    m_oDrawCard->setLocalZOrder(20 + hand_z_ratio[m_oSeatType] * 20);
     m_oHandCardVec.push_back(m_oDrawCard);
 }
 
@@ -214,8 +263,9 @@ void GameDeck::addPGCCard(PlayerOptionData optionData)
     else
     {
         CardsNode* cardsNode = CardsNode::create(m_oSeatType, optionData.oCardsVec.at(0), optionData.oOptionType, optionData.oGangType);
-        cardsNode->setPosition(Vec2(0, 0));
+        cardsNode->setPosition(pgnode_position_start[m_oSeatType] + pgnode_position_offset[m_oSeatType] * m_oPGCCardVec.size() + Vec2(pgnode_position_xy_ratio[m_oSeatType].x *  cardsNode->getContentSize().width * m_oPGCCardVec.size(), pgnode_position_xy_ratio[m_oSeatType].y * cardsNode->getContentSize().height * m_oPGCCardVec.size()));
         addChild(cardsNode);
+        cardsNode->setLocalZOrder(-100);
         
         m_oPGCCardVec.push_back(cardsNode);
     }

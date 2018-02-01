@@ -854,10 +854,10 @@
 		82A3B6E02010860600FD4367 /* GameModel */ = {
 			isa = PBXGroup;
 			children = (
-				8217A94A20176617001C8AA6 /* Card.cpp */,
-				8217A94B20176617001C8AA6 /* Card.h */,
 				9D3C67CA201112470053324B /* GameConfig.cpp */,
 				82A3B6E12010860600FD4367 /* GameConfig.h */,
+				8217A94A20176617001C8AA6 /* Card.cpp */,
+				8217A94B20176617001C8AA6 /* Card.h */,
 				8217A94420175B04001C8AA6 /* GameDeck.cpp */,
 				8217A94520175B04001C8AA6 /* GameDeck.h */,
 				8217A94620175B04001C8AA6 /* GamePlayerDeck.cpp */,
