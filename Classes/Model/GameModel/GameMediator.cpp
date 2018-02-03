@@ -45,6 +45,7 @@ void GameMediator::onRegister()
         gameDeck->setSeatType(Player_Seat_Type(i));
         AppView::getInstance()->addTo(AppView::kLayerAds, gameDeck);
         m_oPlayerDeckVec.push_back(gameDeck);
+        CCLOG("position  x=%f", gameDeck->getPositionX());
     }
     
     for(int i = 0; i < m_oPlayerDeckVec.size(); i++)

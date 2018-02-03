@@ -27,6 +27,8 @@ public:
     
 public:
     void reset();
+private:
+    void initStartPosition();
 //---------------------------------- 牌墙相关 BEGIN ---------------------------------------//
 public:
     void initWall();        //加载牌墙
@@ -35,6 +37,10 @@ public:
     void hideWall();
 protected:
     vector<Card*>   m_oWallCardVec;     //牌墙队列
+    Vec2 wall_position_start[4];
+    Vec2 wall_cardheap_offset[4];       //牌墙两堆之间的偏移量
+    Vec2 wall_updown_offset[4];         //牌墙上下两张牌的偏移量
+    int wall_z_ratio[4];                //牌墙每张牌的z轴系数
 //---------------------------------- 牌墙相关 END -----------------------------------------//
 //---------------------------------- 打出牌相关 BEGIN -------------------------------------//
 public:
@@ -42,6 +48,9 @@ public:
     void addOutCard(vector<int> cardIdVec);
 protected:
     vector<Card*> m_oOutCardVec;
+    Vec2 out_position_start[4];
+    Vec2 out_card_offset[4];            //两张牌之间的偏移量
+    Vec2 out_line_offset[4];            //两行之间的偏移量
 //---------------------------------- 打出牌相关 END ---------------------------------------//
 //---------------------------------- 手牌相关 BEGIN ---------------------------------------//
 public:
@@ -51,6 +60,9 @@ public:
 protected:
     vector<Card*> m_oHandCardVec;
     Card* m_oDrawCard;              //摸的牌
+    Vec2 hand_position_start[4];
+    Vec2 hand_draw_position[4];
+    Vec2 hand_card_offset[4];
 //---------------------------------- 手牌相关 END -----------------------------------------//
 //---------------------------------- 碰牌相关 BEGIN ---------------------------------------//
 public:
@@ -63,8 +75,11 @@ protected:
     CC_SYNTHESIZE(Player_Seat_Type, m_oSeatType, SeatType);
     CC_SYNTHESIZE(unsigned long long, m_oPlayerId, PlayerId);
     
-//---------------------------------- 牌墙相关 BEGIN ---------------------------------------//
-//---------------------------------- 牌墙相关 END -----------------------------------------//
+//---------------------------------- 碰牌相关 BEGIN ---------------------------------------//
+protected:
+    Vec2 pgnode_position_start[4];
+    Vec2 pgnode_position_offset[4];
+//---------------------------------- 碰牌相关 END -----------------------------------------//
 
 };
 

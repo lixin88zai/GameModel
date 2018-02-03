@@ -128,7 +128,7 @@ void AppDelegate::initialize()
     CSysUtil::CrashHandlerSetup();
 #endif
     // 初始化屏幕参数
-    WindowUtil::initialize();
+    WindowUtil::initialize();    
     // 初始化声音参数
     MusicUtil::initialize();
     // 初始化位置参数

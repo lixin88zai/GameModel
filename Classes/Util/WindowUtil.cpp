@@ -13,7 +13,7 @@ namespace util
     
     void WindowUtil::initialize()
     {
-        sizeDevice = Director::getInstance()->getWinSizeInPixels();
+        sizeDevice = Director::getInstance()->getWinSizeInPixels();        
         scaleX = sizeDevice.width / sizeDesign.width;
         scaleY = sizeDevice.height / sizeDesign.height;
         // 适配缩放值
